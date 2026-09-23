@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Happy Birthday! 💖</title>
+	<style>
+		*{box-sizing:border-box}body{margin:0;min-height:100vh;overflow:hidden;display:grid;place-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6e7,#fff5f9,#dceeff)}
+		.container{width:min(90%,650px);text-align:center;position:relative;z-index:2}.card{padding:40px 25px;border-radius:30px;background:#ffffffe6;box-shadow:0 15px 50px #0002;animation:appear 1.5s ease}.cake{font-size:80px;animation:bounce 2s infinite}h1{margin:10px 0 0;font-size:clamp(40px,9vw,70px);color:#e75480;text-shadow:0 3px 10px #e7548033;animation:float 3s infinite}.subtitle{margin-top:15px;font-size:20px;color:#666}.question{margin-top:35px;font-size:25px;font-weight:bold;color:#444}.buttons{margin-top:25px;display:flex;justify-content:center;gap:20px;min-height:70px}button{border:0;padding:14px 32px;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer}#yes{background:#e75480;color:white;box-shadow:0 8px 20px #e7548050}#no{background:#ddd;color:#555}.note{margin-top:20px;color:#999;font-size:13px}.message{display:none;margin-top:25px;animation:appear 1.5s ease}.message h2,.final{color:#e75480}.message p{color:#555;font-size:18px;line-height:1.7;margin:15px 0}.heart,.confetti,.firework{position:fixed;pointer-events:none}.heart{bottom:-50px;font-size:25px;animation:heart 6s linear forwards}.confetti{top:-20px;font-size:25px;animation:fall 5s linear forwards}.firework{font-size:35px;animation:burst 2s ease-out forwards}@keyframes appear{from{opacity:0;transform:translateY(40px) scale(.8)}to{opacity:1;transform:none}}@keyframes bounce{50%{transform:translateY(-12px)}}@keyframes float{50%{transform:translateY(-8px)}}@keyframes heart{15%{opacity:1}to{transform:translateY(-110vh) rotate(360deg);opacity:0}}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}@keyframes burst{0%{transform:scale(0);opacity:1}50%{transform:scale(2)}to{transform:scale(3);opacity:0}}@media(max-width:500px){.card{padding:30px 18px}.cake{font-size:65px}.question{font-size:21px}.message p{font-size:16px}}
+	</style>
+</head>
+<body>
+	<main class="container"><section class="card">
+		<div class="cake">🎂</div><h1>Happy Birthday Ashley Nicole Lubang! 🎉</h1>
+		<div class="subtitle">Inv nalang si lugon bang bungga baya to mag gift, ingnon na naa ko last dance siya? . 💖</div>
+		<div class="question">Invited si lugon sa birthday nimo bang yes/no? 👀</div>
+		<div class="buttons"><button id="yes">YES 💕</button><button id="no">NO 😅</button></div>
+		<div class="note" id="note">Try click ang NO bang... 😏</div>
+		<div class="message" id="message"><h2>YES INVITED JUD LUGON! 💖</h2><p>🎂 Happy Birthday Bang invited najud lugon nc! 🎉</p><p>I hope your special day is filled with happiness, laughter, and beautiful memories.</p><p>May this new year of your life bring you closer to your dreams and give you many reasons to smile.</p><p>Always believe in yourself, keep chasing your dreams, and never forget how special you are. ✨</p><p>I hope you enjoy every moment of your birthday today! 💕</p><div class="final">🎁 HAPPY BIRTHDAY ONCE AGAIN! 🎁</div></div>
+	</section></main>
+	<script>
+		const yes=document.querySelector('#yes'),no=document.querySelector('#no'),msg=document.querySelector('#message'),q=document.querySelector('.question'),buttons=document.querySelector('.buttons'),note=document.querySelector('#note');let count=0;
+		yes.onclick=()=>{q.style.display=buttons.style.display=note.style.display='none';document.querySelector('.subtitle').textContent='This surprise is for you! 💕';msg.style.display='block';hearts();confetti();fireworks()};
+		no.onclick=()=>{count++;no.textContent=count>=9?'You can\'t catch me! 😂':count>=6?'Catch me! 😭':count>=4?'Really? 😂':count>=2?'Are you sure? 😭':'NO 😅';no.style.position='fixed';no.style.left=Math.max(20,Math.random()*(innerWidth-no.offsetWidth-20))+'px';no.style.top=Math.max(20,Math.random()*(innerHeight-no.offsetHeight-20))+'px'};
+		function add(cls,chars,n,time){for(let i=0;i<n;i++){let e=document.createElement('i');e.className=cls;e.textContent=chars[Math.random()*chars.length|0];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(time+Math.random()*time/2)+'s';e.style.animationDelay=Math.random()*2+'s';document.body.append(e);setTimeout(()=>e.remove(),9000)}}
+		function hearts(){add('heart',['💖','💕','💗','💓','❤️'],35,4)}function confetti(){add('confetti',['🎉','✨','🎊','⭐'],80,3)}function fireworks(){let i=0,t=setInterval(()=>{let e=document.createElement('i');e.className='firework';e.textContent='🎆';e.style.left=Math.random()*90+'vw';e.style.top=Math.random()*70+'vh';document.body.append(e);setTimeout(()=>e.remove(),2000);if(++i>=10)clearInterval(t)},700)}
+	</script>
+</body>
+</html>
